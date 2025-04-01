@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: api-monitor-system
+  datasource:
+    url: jdbc:mysql://localhost:13306/api_monitor?serverTimezone=UTC&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+logging:
+    level:
+      root: info
+      org.springframework.web: debug
+
