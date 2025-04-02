@@ -7,6 +7,13 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.stack3mpty.apimonitorsystem.model
+  configuration:
+    map-underscore-to-camel-case: true
+
+
 logging:
     level:
       root: info
