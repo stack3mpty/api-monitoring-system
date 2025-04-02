@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stack3mpty.apimonitorsystem.dao.mapper.MonitoredApiMapper">
+
+    <!-- 插入监控 API 记录 -->
+    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.MonitoredApi" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO monitored_api (user_id, name, url, check_interval, timeout, created_at)
+        VALUES (#{userId}, #{name}, #{url}, #{checkInterval}, #{timeout}, NOW());
+    </insert>
+
+    <!-- 根据 userId 查询监控 API 列表 -->
+    <select id="findByUserId" parameterType="java.lang.Long" resultType="com.stack3mpty.apimonitorsystem.model.MonitoredApi">
+        SELECT id, user_id, name, url, check_interval, timeout, created_at
+        FROM monitored_api
+        WHERE user_id = #{userId}
+    </select>
+
+    <!-- 根据 ID 删除监控 API -->
+    <delete id="deleteById" parameterType="java.lang.Long">
+        DELETE FROM monitored_api WHERE id = #{id}
+    </delete>
+
+</mapper>

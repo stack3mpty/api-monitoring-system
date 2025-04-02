@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stack3mpty.apimonitorsystem.dao.mapper.AlertRuleMapper">
+
+    <!-- 插入告警规则 -->
+    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.AlertRule">
+        INSERT INTO alert_rule (api_id, rule_type, threshold, notify_email, notify_webhook, webhook_url, created_at)
+        VALUES (#{apiId}, #{ruleType}, #{threshold}, #{notifyEmail}, #{notifyWebhook}, #{webhookUrl}, NOW());
+    </insert>
+
+    <!-- 根据 API ID 查询告警规则 -->
+    <select id="findByApiId" parameterType="java.lang.Long" resultType="com.stack3mpty.apimonitorsystem.model.AlertRule">
+        SELECT id, api_id, rule_type, threshold, notify_email, notify_webhook, webhook_url, created_at
+        FROM alert_rule
+        WHERE api_id = #{apiId}
+    </select>
+
+</mapper>

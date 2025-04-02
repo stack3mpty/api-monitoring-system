@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stack3mpty.apimonitorsystem.dao.mapper.MonitoringLogMapper">
+
+    <!-- 插入监控日志 -->
+    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.MonitoringLog" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO monitoring_log (api_id, status_code, response_time, checked_at)
+        VALUES (#{apiId}, #{statusCode}, #{responseTime}, NOW());
+    </insert>
+
+    <!-- 查询最近的监控日志 -->
+    <select id="findRecentLogs" parameterType="map" resultType="com.stack3mpty.apimonitorsystem.model.MonitoringLog">
+        SELECT id, api_id, status_code, response_time, checked_at
+        FROM monitoring_log
+        WHERE api_id = #{apiId}
+        ORDER BY checked_at DESC
+        LIMIT #{limit}
+    </select>
+
+</mapper>

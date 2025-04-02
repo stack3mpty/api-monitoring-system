@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stack3mpty.apimonitorsystem.dao.mapper.UserMapper">
+
+    <!-- 插入用户 -->
+    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.User" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO user (username, email, password, created_at)
+        VALUES (#{username}, #{email}, #{password}, #{createdAt});
+    </insert>
+
+    <!-- 根据 ID 查询用户 -->
+    <select id="findById" parameterType="java.lang.Long" resultType="com.stack3mpty.apimonitorsystem.model.User">
+        SELECT id, username, email, password, created_at
+        FROM user
+        WHERE id = #{id}
+    </select>
+
+    <!-- 根据用户名查询用户 -->
+    <select id="findByUsername" parameterType="java.lang.String" resultType="com.stack3mpty.apimonitorsystem.model.User">
+        SELECT id, username, email, password, created_at
+        FROM user
+        WHERE username = #{username}
+    </select>
+
+    <!-- 查询所有用户 -->
+    <select id="findAll" resultType="com.stack3mpty.apimonitorsystem.model.User">
+        SELECT id, username, email, password, created_at
+        FROM user
+    </select>
+
+</mapper>
