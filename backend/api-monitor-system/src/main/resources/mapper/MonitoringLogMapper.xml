@@ -3,10 +3,11 @@
 <mapper namespace="com.stack3mpty.apimonitorsystem.dao.mapper.MonitoringLogMapper">
 
     <!-- 插入监控日志 -->
-    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.MonitoringLog" useGeneratedKeys="true" keyProperty="id">
-        INSERT INTO monitoring_log (api_id, status_code, response_time, checked_at)
-        VALUES (#{apiId}, #{statusCode}, #{responseTime}, NOW());
+    <insert id="insert" parameterType="com.stack3mpty.apimonitorsystem.model.MonitoringLog">
+        INSERT INTO monitoring_log (api_id, status_code, response_time, checked_at, error_message)
+        VALUES (#{apiId}, #{statusCode}, #{responseTime}, #{checkedAt}, #{errorMessage})
     </insert>
+
 
     <!-- 查询最近的监控日志 -->
     <select id="findRecentLogs" parameterType="map" resultType="com.stack3mpty.apimonitorsystem.model.dto.MonitoringLogDTO">

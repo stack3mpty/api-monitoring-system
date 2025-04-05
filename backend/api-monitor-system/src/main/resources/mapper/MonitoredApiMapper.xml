@@ -14,6 +14,9 @@
         FROM monitored_api
         WHERE user_id = #{userId}
     </select>
+    <select id="findAll" resultType="com.stack3mpty.apimonitorsystem.model.MonitoredApi">
+        SELECT * FROM monitored_api
+    </select>
 
     <!-- 根据 ID 删除监控 API -->
     <delete id="deleteById" parameterType="java.lang.Long">

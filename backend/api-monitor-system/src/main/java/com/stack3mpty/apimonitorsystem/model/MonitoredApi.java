@@ -1,10 +1,8 @@
 package com.stack3mpty.apimonitorsystem.model;
 
-import com.alibaba.fastjson2.annotation.JSONField;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-
-import java.time.LocalDateTime;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @author stack3mpty
@@ -13,6 +11,7 @@ import java.time.LocalDateTime;
  */
 @Data
 public class MonitoredApi {
+
     private Long id;
     private Long userId;
     private String name;
