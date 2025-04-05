@@ -9,12 +9,25 @@
     </insert>
 
     <!-- 查询最近的监控日志 -->
-    <select id="findRecentLogs" parameterType="map" resultType="com.stack3mpty.apimonitorsystem.model.MonitoringLog">
-        SELECT id, api_id, status_code, response_time, checked_at
-        FROM monitoring_log
-        WHERE api_id = #{apiId}
-        ORDER BY checked_at DESC
+    <select id="findRecentLogs" parameterType="map" resultType="com.stack3mpty.apimonitorsystem.model.dto.MonitoringLogDTO">
+        SELECT
+            ml.id,
+            ml.api_id,
+            ma.name AS api_name,
+            ma.url AS api_url,
+            ml.status_code,
+            ml.response_time,
+            ml.checked_at
+        FROM monitoring_log ml
+                 JOIN monitored_api ma ON ml.api_id = ma.id
+        WHERE ml.api_id = #{apiId}
+        ORDER BY ml.checked_at DESC
         LIMIT #{limit}
+    </select>
+
+    <select id="findLogsByDateRange" resultType="com.stack3mpty.apimonitorsystem.model.MonitoringLog">
+        SELECT * FROM monitoring_log WHERE api_id = #{apiId} AND checked_at BETWEEN #{startDate} AND #{endDate}
+        ORDER BY checked_at DESC;
     </select>
 
 </mapper>

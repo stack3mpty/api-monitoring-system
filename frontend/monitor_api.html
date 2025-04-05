@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 监控管理系统</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>API 监控管理系统</h1>
+    </header>
+    <main>
+        <section class="api-list">
+            <h2>已监控 API</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>名称</th>
+                    <th>URL</th>
+                    <th>状态</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody id="apiTableBody">
+                <!-- API 数据将动态加载 -->
+                </tbody>
+            </table>
+        </section>
+        <section class="add-api">
+            <h2>添加 API</h2>
+            <form id="addApiForm">
+                <label for="apiName"></label><input type="text" id="apiName" placeholder="API 名称" required>
+                <label for="apiUrl"></label><input type="text" id="apiUrl" placeholder="API 地址" required>
+                <button type="submit">添加</button>
+            </form>
+        </section>
+    </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

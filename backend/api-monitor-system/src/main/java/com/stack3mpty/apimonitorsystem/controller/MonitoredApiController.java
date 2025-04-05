@@ -2,6 +2,7 @@ package com.stack3mpty.apimonitorsystem.controller;
 
 import com.stack3mpty.apimonitorsystem.model.MonitoredApi;
 import com.stack3mpty.apimonitorsystem.service.IMonitoredApiService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -11,7 +12,7 @@ import java.util.List;
  * @description
  * @create 2025/4/1 17:30
  */
-
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api/monitor")
 public class MonitoredApiController {

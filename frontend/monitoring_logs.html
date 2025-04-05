@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 监控日志</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <h1>API 监控日志</h1>
+    </header>
+    <main>
+        <section class="log-list">
+            <h2>监控日志</h2>
+            <table>
+                <thead>
+                <tr>
+                    <th>API 名称</th>
+                    <th>URL</th>
+                    <th>状态</th>
+                    <th>响应时间 (ms)</th>
+                    <th>记录时间</th>
+                </tr>
+                </thead>
+                <tbody id="logTableBody">
+                <!-- 监控日志将动态加载 -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+</div>
+<script src="monitoring_logs.js"></script>
+</body>
+</html>
