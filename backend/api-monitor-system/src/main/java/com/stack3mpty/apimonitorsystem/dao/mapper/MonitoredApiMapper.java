@@ -18,4 +18,6 @@ public interface MonitoredApiMapper {
     List<MonitoredApi> findByUserId(@Param("userId") Long userId);
 
     int deleteById(@Param("id") Long id);
+
+    List<MonitoredApi> findAll();
 }
