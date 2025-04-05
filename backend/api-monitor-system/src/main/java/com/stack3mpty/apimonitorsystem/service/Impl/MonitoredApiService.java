@@ -3,6 +3,7 @@ package com.stack3mpty.apimonitorsystem.service.Impl;
 import com.stack3mpty.apimonitorsystem.dao.mapper.MonitoredApiMapper;
 import com.stack3mpty.apimonitorsystem.model.MonitoredApi;
 import com.stack3mpty.apimonitorsystem.service.IMonitoredApiService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
