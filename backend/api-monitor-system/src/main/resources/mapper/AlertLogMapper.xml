@@ -16,5 +16,19 @@
         ORDER BY triggered_at DESC
         LIMIT #{limit}
     </select>
+    <select id="findRecentAlerts" resultType="com.stack3mpty.apimonitorsystem.model.dto.AlertLogDTO">
+        SELECT
+            al.id,
+            al.api_id,
+            ma.name AS api_name,
+            ma.url AS api_url,
+            al.message,
+            al.triggered_at
+        FROM alert_log al
+                 JOIN monitored_api ma ON al.api_id = ma.id
+        WHERE al.api_id = #{apiId}
+        ORDER BY al.triggered_at DESC
+        LIMIT #{limit}
+    </select>
 
 </mapper>
