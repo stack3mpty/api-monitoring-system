@@ -22,7 +22,7 @@ document.getElementById("loginForm").addEventListener("submit", async function (
 
         if (response.ok) {
             localStorage.setItem("token", result.token);
-            window.location.href = "dashboard.html"; // 登录成功后跳转
+            window.location.href = "monitor_api.html"; // 登录成功后跳转
         } else {
             console.error("登录失败:", result.message);
             showMessage(result.message || "登录失败", true);

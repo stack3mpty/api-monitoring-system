@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     api.status = 1;
                     const row = document.createElement("tr");
                     row.innerHTML = `
-                        <td>${api.name}</td>
+                        <td><a href="monitoring_logs.html?apiId=${api.id}&name=${encodeURIComponent(api.name)}&url=${api.url}">${api.name}</a></td>
                         <td>${api.url}</td>
                         <td class="status">${api.status ? "✅ 正常" : "❌ 异常"}</td>
                         <td>
