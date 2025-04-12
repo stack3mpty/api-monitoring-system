@@ -24,7 +24,7 @@ A lightweight and open-source API monitoring system built with **Spring Boot** (
 
 ### Backend Setup
 ```sh
-git clone https://github.com/yourusername/api-monitoring-system.git
+git clone https://github.com/stack3mpty/api-monitoring-system.git
 cd api-monitoring-system/backend
 
 # Configure database settings in application.yml
@@ -66,6 +66,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 ### Contact
-- GitHub: [yourusername](https://github.com/yourusername)
-- Email: your@email.com
+- GitHub: https://github.com/stack3mpty/api-monitoring-system
+- Email: stack3mpty@gmail.com
 
